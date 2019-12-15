@@ -1,0 +1,15 @@
+<div class="container" *ngFor="let todo of todos">
+  <div class="card">
+    <div class="card-body">
+      <h5 class="todoName card-title">{{ todo.name }}</h5>
+      <p class="tododescription card-text">
+        {{ todo.description }}
+      </p>
+      <button (click)="onUpdate(todo)" class="btn-md btn-info">Update</button
+      >&nbsp;&nbsp;
+      <button (click)="onMarkDone(todo)" class="btn-md btn-success">Done</button
+      >&nbsp;&nbsp;
+      <button (click)="onDelete(todo)" class="btn-md btn-danger">Delete</button>
+    </div>
+  </div>
+</div>

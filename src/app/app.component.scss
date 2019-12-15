@@ -1,0 +1,24 @@
+$primary_color: #346beb;
+$secondary-color: #ffffff;
+
+.navbar {
+  background: $primary_color;
+  .navbar-container {
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    .navbar-brand,
+    .nav-link {
+      color: $secondary-color;
+    }
+    .nav-link {
+      margin-right: 2em;
+    }
+    .collapse {
+      margin-left: 20em;
+    }
+  }
+  .active {
+    color: red;
+  }
+}

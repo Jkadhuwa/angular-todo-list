@@ -1,0 +1,60 @@
+<div class="container">
+  <div class="title">UPDATE TODO</div>
+  <form
+    class="card form-group"
+    [formGroup]="updatedForm"
+    (ngSubmit)="onSubmit(updatedForm.value)"
+  >
+    <div class="input-wrapper">
+      <div class="todoName">
+        <label>Todo Name </label>
+        <input
+          type="text"
+          class="form-input"
+          formControlName="todoName"
+          id="todoName"
+        />
+
+        <div>{{ updateForm.todoName.error }}</div>
+        <div *ngIf="updateForm.todoName.errors && updateForm.todoName.touched">
+          <small class="errors" *ngIf="updateForm.todoName.errors.required"
+            >Todo name is required</small
+          >
+        </div>
+      </div>
+      <div class="todoDescription">
+      <label
+        >Description
+      </label>
+        <textarea
+          type="text"
+          class="form-input"
+          formControlName="todoDescription"
+          id="description"
+        ></textarea>
+     
+      <div
+        *ngIf="
+          updateForm.todoDescription.errors &&
+          updateForm.todoDescription.touched
+        "
+      >
+        <small class="errors" *ngIf="updateForm.todoDescription.errors.required"
+          >Todo description is required</small
+        >
+      </div>
+      </div>
+      
+    </div>
+    <div class="button">
+      <button
+        [disabled]="!updatedForm.valid"
+        type="submit"
+        name="btn-submit"
+        class="btn btn-primary"
+      >
+        Update
+      </button>
+    </div>
+  </form>
+</div>
